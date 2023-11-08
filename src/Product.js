@@ -1,15 +1,43 @@
 function Product() {
 
-   const nameProduct = ["Air Force 1" , "Air Max" , "Jordan"]
+   const nameProduct = [
+      {
+            title: "aspirateur" ,
+            price:20 ,
+            IsPublished:true,
+      },
+      {
+            title: "canne a peche" ,
+            price:150 ,
+            IsPublished: false,
+      },
+      {
+            title:"casque de mobilette",
+            price:80 ,
+            IsPublished: true,
+      },
+      {
+            title: "canne a peche" ,
+            price:150 ,
+            IsPublished: false,
+      }
+   ]
 
    return(
        <section>
-           {nameProduct.map((name) => {
-               return(
-               <article>
-                 <h2>{name}</h2>
-               </article>
-           )})}
+           {nameProduct.map((product) => {
+                return (
+                    <article>
+                        {product.IsPublished && (
+                            <>
+                                <h2>{product.title}</h2>
+                                <p>{product.price}</p>
+                            </>
+                        )                         
+                        }
+                    </article>
+                        )
+            })}  
        </section>
 
    )
