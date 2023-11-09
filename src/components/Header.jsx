@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Header(){
    const isUserLogged = true;
    const itemInCart = 2;
@@ -12,10 +14,9 @@ function Header(){
          <nav>
 
             <ul>
-               <li>Home</li>
-               <li>Contact</li>
-               {isUserLogged ? <li>{userLogged.firstname} {userLogged.lastname} - {userLogged.job}</li> : <li>Veuillez vous connecter</li>}
-               {itemInCart > 0 ? <li>Cart : {itemInCart} </li> : <li>Pas d'item au panier</li>}
+               <li><Link to='/'>Home</Link></li>
+               <li><Link to='/Profile'>Profile</Link></li>
+               <li><Link to='/Contact'>Contact</Link></li>
             </ul>
 
          </nav>
